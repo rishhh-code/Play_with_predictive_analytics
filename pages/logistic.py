@@ -6,13 +6,10 @@ import numpy as np
 
 # Load the logistic regression model
 model = joblib.load("models/logi.pkl")
-
-st.title("📘 Logistic Regression: Pass or Fail Predictor")
-
-option = st.radio("Choose an option", ["🎯 Predict Result", "📊 Know the Model Logic"])
+option = st.radio("Choose an option", [" Predict Result", " Know the Model Logic"])
 
 # Option 1: Predict Result
-if option == "🎯 Predict Result":
+if option == " Predict Result":
     st.subheader("🎓 Will the student Pass or Fail?")
     st.write("Enter two grade scores (e.g., internal marks or assessments) to predict if the student will pass (1) or fail (0).")
 
@@ -30,8 +27,8 @@ if option == "🎯 Predict Result":
             st.error(f"❌ Predicted: FAIL (Confidence: {1 - proba:.2f})")
 
 # Option 2: Know the Model Logic
-elif option == "📊 Know the Model Logic":
-    st.subheader("🧠 Behind the Logistic Regression Model")
+elif option == " Know the Model Logic":
+    st.subheader(" Behind the Logistic Regression Model")
 
     st.markdown("""
     ### 🔍 Model Info:
@@ -69,5 +66,6 @@ joblib.dump(model, 'models/prepare_model3.pkl')
     - Works well with small and clean datasets
 
     """)
-
+    st.markdown("## Summary Output Screen")
+    st.image("images/logistic.png", caption="Predicted Price Based on Input", use_column_width=True)
 
