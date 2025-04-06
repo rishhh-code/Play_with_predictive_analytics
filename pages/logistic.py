@@ -10,7 +10,7 @@ option = st.radio("Choose an option", [" Predict Result", " Know the Model Logic
 
 # Option 1: Predict Result
 if option == " Predict Result":
-    st.subheader("🎓 Will the student Pass or Fail?")
+    st.subheader("Will the student Pass or Fail?")
     st.write("Enter two grade scores (e.g., internal marks or assessments) to predict if the student will pass (1) or fail (0).")
 
     grade1 = st.number_input("Enter Grade 1:", min_value=0.0, max_value=100.0, value=60.0)
@@ -22,9 +22,9 @@ if option == " Predict Result":
         proba = model.predict_proba(input_data)[0][1]
 
         if prediction == 1:
-            st.success(f"✅ Predicted: PASS (Confidence: {proba:.2f})")
+            st.success(f"✅ Predicted: PASS ")
         else:
-            st.error(f"❌ Predicted: FAIL (Confidence: {1 - proba:.2f})")
+            st.error(f"❌ Predicted: FAIL ")
 
 # Option 2: Know the Model Logic
 elif option == " Know the Model Logic":
